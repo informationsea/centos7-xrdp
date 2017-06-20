@@ -1,7 +1,7 @@
 FROM centos:7
 ENV container docker
-ENV http_proxy http://172.17.0.1:3128
-RUN echo "include_only=.jp" >> /etc/yum/pluginconf.d/fastestmirror.conf
+#ENV http_proxy http://172.17.0.1:3128
+#RUN echo "include_only=.jp" >> /etc/yum/pluginconf.d/fastestmirror.conf
 RUN yum update -y
 RUN yum groupinstall -y "Minimal Install"
 RUN yum install -y epel-release
