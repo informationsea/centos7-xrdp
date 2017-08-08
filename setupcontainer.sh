@@ -20,6 +20,10 @@ rm /etc/localtime
 rm -f /etc/xdg/autostart/xfce-polkit.desktop
 echo '%wheel        ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers
 
+cat <<EOF > /etc/locale.conf
+LANG=ja_JP.UTF-8
+EOF
+
 cat <<EOF > /etc/supervisord.d/xrdp.ini
 [program:xrdp-sesman]
 command=/sbin/xrdp-sesman -n
