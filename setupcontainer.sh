@@ -27,7 +27,11 @@ EOF
 cat <<EOF > /etc/supervisord.d/xrdp.ini
 [program:xrdp-sesman]
 command=/sbin/xrdp-sesman -n
+redirect_stderr=true
+stdout_logfile=/var/log/xrdp-sesman.log
 
 [program:xrdp]
 command=/sbin/xrdp -n
+redirect_stderr=true
+stdout_logfile=/var/log/xrdp.log
 EOF
